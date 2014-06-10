@@ -203,7 +203,10 @@ def xml_string_to_dataframe(strin):
             print ("date: "+copyrtdate)
         entry_dict['journal'].append(journal)
         entry_dict['print_date'].append(print_date)
-        entry_dict['journ_sec'].append(journ_sec)
+	try:
+	        entry_dict['journ_sec'].append(reorganize_dict[journ_sec])
+	except:
+		entry_dict['journ_sec'].append(journ_sec)
         entry_dict['doi'].append(doi)
         entry_dict['title'].append(title)
         entry_dict['authors'].append(authors)
@@ -212,4 +215,36 @@ def xml_string_to_dataframe(strin):
     print ("Number of dropped_entries: %d" %dropped_entries)
     out_df = pd.DataFrame(entry_dict)
     return out_df
+
+reorganize_dict = {u'Articles':u'Articles',
+		   u'Article':u'Article',
+		   u'Fluids, Thermodynamics, and Related Topics':u'Fluids, Thermodynamics, and Related Topics',
+		   u'Plasmas, Fluids, Thermodynamics, and Related Topics':u'Plasmas, Fluids, Thermodynamics, and Related Topics',
+		   u'Fluids, Plasmas, and Electric Discharges':u'Fluids, Plasmas, and Electric Discharges', 
+		   u'Plasma and Beam Physics':u'Plasma and Beam Physics', 
+		   u'Nonlinear Dynamics, Fluid Dynamics, Classical Optics, Etc.':u'Nonlinear Dynamics, Fluid Dynamics, Classical Optics, etc.', 
+		   u'Nonlinear Dynamics: Fluid Dynamics, Classical Optics, Etc.':u'Nonlinear Dynamics, Fluid Dynamics, Classical Optics, etc.',
+		   u'Nonlinear Dynamics, Fluid Dynamics, Classical Optics, etc.':u'Nonlinear Dynamics, Fluid Dynamics, Classical Optics, etc.',
+                 u'Atoms and Molecules':u'Atoms and Molecules',
+                 u'Atoms, Molecules, and Related Topics':u'Atoms, Molecules, and Related Topics',
+                 u'Atomic, Molecular, and Optical Physics':u'Atomic, Molecular, and Optical Physics',
+                 u'Solids':u'Solids', 
+                 u'Nuclei':u'Nuclei', 
+                 u'Atoms, Nuclei, and Particles in Matter':u'Atoms, Nuclei, and Particles in Matter',
+                 u'Nuclear Physics':u'Nuclear Physics', 
+                 u'Elementary Particles and Fields':u'Elementary Particles and Fields', 
+                 u'Condensed Matter: Structure, Etc.':u'Condensed Matter: Structure, etc.', 
+                 u'Condensed Matter: Electronic Properties, Etc.':u'Condensed Matter: Electronic Properties, etc.', 
+                 u'Condensed Matter: Structure, etc.':u'Condensed Matter: Structure, etc.',
+                 u'Condensed Matter: Electronic Properties, etc.':u'Condensed Matter: Electronic Properties, etc.',
+                 u'General Physics':u'General Physics',
+                 u'General Physics: Statistical and Quantum Mechanics, Quantum Information, etc.':u'General Physics: Statistical and Quantum Mechanics, Quantum Information, etc.', 
+                 u'Classical Phenomenology and Applications':u'Classical Phenomenology and Applications',
+                 u'Fundamental Phenomenology and Applications':u'Fundamental Phenomenology and Applications',
+                 u'Geophysics, Astronomy, and Astrophysics':u'Geophysics, Astronomy, and Astrophysics', 
+                 u'Gravitation and Astrophysics':u'Gravitation and Astrophysics',
+                 u'Interdisciplinary Physics: Biological Physics, Quantum Information, Etc.':u'Interdisciplinary Physics: Biological Physics, Quantum Information, etc.', 
+                 u'Interdisciplinary Physics: Biological Physics, Quantum Information, etc.':u'Interdisciplinary Physics: Biological Physics, Quantum Information, etc.', 
+                 u'Soft Matter, Biological, and Interdisciplinary Physics':u'Soft Matter, Biological, and Interdisciplinary Physics',
+                 u'Cross-Disciplinary Physics':u'Cross-Disciplinary Physics'}
 
