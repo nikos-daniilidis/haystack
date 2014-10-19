@@ -28,15 +28,15 @@ To find your way through this library, the easiest way will be to look at the IP
 [IPython notebook](https://github.com/nikos-daniilidis/haystack/blob/master/parse-prl-xml.ipynb)/
 [html](http://nikos-daniilidis.github.io/haystack/parse-prl-xml.html)/
 
-4. Explore the Physical Review Archive
+4. Explore the Physical Review Archive  - Zipf law for titles (html only)
 [IPython notebook](https://github.com/nikos-daniilidis/haystack/blob/master/explore-physical-review-scikit.ipynb)/
 [html](http://nikos-daniilidis.github.io/haystack/explore-physical-review.html)/
 [Blog post](http://nikosd.me/jekyll/update/2014/06/09/physe-rev-trends.html)/
-[blog mirror](http://oligotropos.wordpress.com/2014/06/01/physics-in-war-and-peace-historic-trends-in-the-physical-review-archive/#more-5) *related to the one above, not exact match*
+[blog mirror](http://oligotropos.wordpress.com/2014/06/01/physics-in-war-and-peace-historic-trends-in-the-physical-review-archive/#more-5) 
 
 5. Parsing of the xml data file for Physical Review archive
 [IPython notebook](https://github.com/nikos-daniilidis/haystack/blob/master/parse-pr-xml.ipynb)/
-[html](http://nikos-daniilidis.github.io/haystack/parse-pr-xml.html)/
+[html](http://nikos-daniilidis.github.io/haystack/parse-pr-xml.html) *(related to the one above, not exact match)*
 
 
 
